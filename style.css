@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #FAFAFA;
+}
+.cell-img{
+    width: 247px;
+    height: 505px;
+    position: relative;
+    background: #FFFFFF;
+    box-shadow: 15px 25px 50px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 27px;
+    z-index: -2;
+}
+.app-header{
+    position: absolute;
+    width: 227px;
+    height: 66px;
+    top: 11px;
+    left: 10px;
+    background: linear-gradient(90deg, #8838FF 0.22%, #E942FF 105.73%);
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 7px 7px;
+}
+.cam{
+width: 129px;
+height: 18px;
+margin: 0 auto;
+background: #FFFFFF;
+border-radius: 0px 0px 14px 14px;
+}
+.header-elements{
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+}
+.back{
+    position: relative;
+    width: 4px;
+    height: 10px;
+    margin: 19px 0 19px 15px
+}
+.back::before,
+.back::after{
+    content: ' ';
+    position: absolute;
+    width: 2px;
+    height: 6px;
+    background: white;
+    border-radius: 1px;
+}
+.back::before{
+    top: 4px;
+    transform: translate(1px,0) rotate(-35deg);
+}
+.back::after{
+    transform: translate(1px,0) rotate(35deg);
+}
+.user-img{
+    width: 26px;
+    height: 26px;
+    border: 1px white solid;
+    border-radius: 50%;
+    margin: auto 11px;
+}
+.user-text{
+    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.user-name{
+    color: white;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.035em;
+    margin: 11px auto 1px 0;
+}
+.user-status{
+    color: #9241C8;
+    font-size: 8px;
+    line-height: 9px;
+    letter-spacing: 0.005em;
+    margin: 1px auto 12px 0;
+}
+.menu{
+    position: relative;
+    width: 2px;
+    height: 2px;
+    border-radius: 1px;
+    background: white;
+    margin: auto 1rem auto auto;
+}
+.menu::before,
+.menu::after{
+    content:' ';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 1px;
+}
+.menu::before{
+    top: 4px;
+}
+.menu::after{
+    top: -4px;
+}
+.cell-background{
+    position: absolute;
+    width: 227px;
+    height: 422px;
+    left: 10px;
+    top: 72px;
+    z-index: -1;
+    background: #F6F4F7;
+    border-radius: 0px 0px 17px 17px;
+}
+.chat-img{
+    width: 41px;
+    height: 41px;
+    border-radius: 11px;
+}
