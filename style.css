@@ -4,9 +4,13 @@
     box-sizing: border-box;
 }
 body{
+    position: relative;
     background: #FAFAFA;
+    min-height: 1024px;
 }
 .cell-img{
+    margin-top: calc(7.6vw + 36.5px);
+    margin-left: calc(-35.9px + 27.7vw);
     width: 247px;
     height: 505px;
     position: relative;
@@ -79,7 +83,7 @@ border-radius: 0px 0px 14px 14px;
     margin: 11px auto 1px 0;
 }
 .user-status{
-    color: #9241C8;
+    color: #D89EFF;
     font-size: 8px;
     line-height: 9px;
     letter-spacing: 0.005em;
@@ -247,6 +251,7 @@ h1{
     text-align: center;
     letter-spacing: 0.017em;
     color: #3E2753;
+    margin: 52px 0 13px;
 }
 p{
     font-family: Rubik;
@@ -257,4 +262,37 @@ p{
     text-align: center;
     letter-spacing: 0.003em;
     color: #A39DAA;
+    width: 316px;
+    margin: auto;
+}
+.attribution{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.purple-shape{
+    position: absolute;
+    z-index: -3;
+    width: 511px;
+    height: 939px;
+    /* left: -319px;
+    top: -429px; */
+    left: calc(21.4vw - 399px);
+    top: calc(17.7vw - 495px);
+    background: linear-gradient(0deg, #8838FF 0%, #E942FF 100%);
+    border-radius: 255px;
+}
+.gray-shape{
+    position: absolute;
+    z-index: -3;
+    width: 511px;
+    height: 1164px;
+    right: calc(12.6vw - 367px);
+    top: calc(-28.9vw + 533px);
+    background: #F9F4FA;
+    border-radius: 255.5px;
 }
