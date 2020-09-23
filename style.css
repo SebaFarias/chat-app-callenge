@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 body{
-    position: relative;
     background: #FAFAFA;
     min-height: 1024px;
 }
@@ -266,21 +265,15 @@ p{
     margin: auto;
 }
 .attribution{
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%,0);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center;
+    height: 100%;
+    margin-top: 600px;
 }
 .purple-shape{
     position: absolute;
     z-index: -3;
     width: 511px;
     height: 939px;
-    /* left: -319px;
-    top: -429px; */
     left: calc(21.4vw - 399px);
     top: calc(17.7vw - 495px);
     background: linear-gradient(0deg, #8838FF 0%, #E942FF 100%);
