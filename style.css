@@ -322,7 +322,7 @@ a{
         flex-shrink: 0;
     }
     .text{
-        padding-top: calc(112.5px - 7.6vw);
+        padding-top: 97px;
     }
     p,
     h1{
