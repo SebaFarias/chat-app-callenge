@@ -1,3 +1,12 @@
+# ToDos
+  [X] left Typing animation 
+  [X] left appear animation 
+  [ ] rigth Typing animation 
+  [ ] rigth appear animation 
+  [ ] img loading animation 
+  [ ] img loaded animation 
+  [ ] img loaded animation 
+ 
 # Frontend Mentor - Chat app CSS illustration
 
 ![Design preview for the Chat app CSS illustration coding challenge](./design/desktop-preview.jpg)

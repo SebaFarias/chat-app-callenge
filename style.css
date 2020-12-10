@@ -1,12 +1,37 @@
+/********************************* 
+*       Table of Contents
+*       1- General Config
+*       2- Cell Phone
+*       3- Screen Header
+*       4- Screen Body
+*       5- Copy Text
+*       6- Footer
+*       7- KeyFrames
+*       8- Animations
+*       9- MediaQuery
+*
+*********************************/
+/********************************
+*
+*       1- General Config
+*
+********************************/
+
 *{
-    --gradient: linear-gradient(90deg, #8838FF 0.22%, #E942FF 105.73%);
-    --gradient-inverse: linear-gradient(270deg, #8838FF 11.02%, #E942FF 100%);
+    --gradient: linear-gradient(90deg, hsl(264, 100%, 61%) 0.22%, hsl(293, 100%, 63%) 105.73%);
+    --gradient-inverse: linear-gradient(270deg, hsl(264, 100%, 61%) 11.02%, hsl(293, 100%, 63%) 100%);
+    --pale-violet: hsl(276, 100%, 81%);
+    --moderate-violet: hsl(276, 55%, 52%);
+    --desaturated-dark-violet: hsl(271, 15%, 43%);
+    --grayish-blue: hsl(206, 6%, 79%);
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    --dark-grayish-violet: hsl(270, 7%, 64%);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background: #FAFAFA;
+    background: hsl(0, 0%, 98%);
     overflow-x: hidden;
     width: 100vw;
 }
@@ -19,6 +44,11 @@ body{
     overflow: hidden;   
     min-height: 1024px;
 }
+/********************************
+*
+*       2- Cell Phone
+*
+********************************/
 .cell-img{
     margin-left: calc(27.7vw - 35.9px);
     width: 247px;
@@ -29,6 +59,11 @@ body{
     border-radius: 27px;
     z-index: -2;
 }
+/********************************
+*
+*       3- Screen Header
+*
+********************************/
 .app-header{
     position: absolute;
     width: 227px;
@@ -93,13 +128,13 @@ border-radius: 0px 0px 14px 14px;
     margin: 11px auto 1px 0;
 }
 .user-status{
-    color: #D89EFF;
+    color: var(--pale-violet);
     font-size: 8px;
     line-height: 9px;
     letter-spacing: 0.005em;
     margin: 1px auto 12px 0;
 }
-.menu{
+.hamburger{
     position: relative;
     width: 2px;
     height: 2px;
@@ -107,8 +142,8 @@ border-radius: 0px 0px 14px 14px;
     background: white;
     margin: auto 1rem auto auto;
 }
-.menu::before,
-.menu::after{
+.hamburger::before,
+.hamburger::after{
     content:' ';
     position: absolute;
     width: 2px;
@@ -116,14 +151,20 @@ border-radius: 0px 0px 14px 14px;
     background: white;
     border-radius: 1px;
 }
-.menu::before{
+.hamburger::before{
     top: 4px;
 }
-.menu::after{
+.hamburger::after{
     top: -4px;
 }
+/********************************
+*
+*       4- Screen Body
+*
+********************************/
 .cell-background{
     position: absolute;
+    overflow: hidden;
     width: 227px;
     height: 422px;
     left: 10px;
@@ -138,8 +179,10 @@ border-radius: 0px 0px 14px 14px;
 }
 .left-msg{
     width: 128px;
+    height: 34.2px;
     margin: 8px 7px;
     padding: 7.1px 8px 5.1px 8px;
+    overflow: hidden;
     background: #EDE5F4;
     border-radius: 9px 9px 9px 4px;
     font-family: Rubik;
@@ -148,30 +191,86 @@ border-radius: 0px 0px 14px 14px;
     font-size: 8px;
     line-height: 11px;
     letter-spacing: 0.005em;
-    color: #9241C8;
+    color: var(--moderate-violet);
+}
+.left-third-animation{
+  height: 45px;
+}
+.typing {
+  display: flex;
+  transform: scale(0,0);
+  align-items: center;
+  height: 17px;
+}
+.typing .dot {
+  background-color: var(--moderate-violet) ; 
+  border-radius: 50%;
+  height: 7px;
+  margin-right: 4px;
+  vertical-align: middle;
+  width: 7px;
+  display: inline-block;
+}
+.typing .dot:last-child {
+  margin-right: 0;
 }
 #dog-imgs{
     margin: 15px -1px -4px auto;
     width: 137px;
+    height: 44.5px;
+    display: flex;
+  }
+.img-container{
+  width: 41px;
+  height: 41px;
+  margin-right: 4px;
+  position: relative;
 }
 .chat-img{
-    width: 41px;
-    height: 41px;
-    border-radius: 11px;
+  width: 41px;
+  height: 41px;
+  border-radius: 11px;
+}
+.img-container::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 41px;
+  height: 41px;
+  opacity: 0%;
+  border-radius: 11px;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.img-container::after{
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0%;
+  transform: translate(-50%,-50%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid var(--pale-violet);
+  border-color: var(--pale-violet) var(--pale-violet) var(--pale-violet) transparent;
+  z-index: 1;
+
 }
 .right-msg{
     width: 128px;
     margin: 8px 7px 8px auto;
     padding: 7.5px 8px 4.5px 8px;
     background: #FFFFFF;
-    border-radius: 9px 9px 9px 4px;
+    border-radius: 9px 9px 4px 9px;
     font-family: Rubik;
     font-style: normal;
     font-weight: normal;
     font-size: 8px;
     line-height: 11px;
     letter-spacing: 0.005em;
-    color: #857297;
+    color: var(--desaturated-dark-violet);
 }
 .spacer2{
     height: 1px;
@@ -222,7 +321,22 @@ border-radius: 0px 0px 14px 14px;
     font-size: 8px;
     line-height: 11px;
     letter-spacing: 0.06em;
-    color: #C6CACD;
+    color: var(--grayish-blue);
+  }
+  .first-user-message{
+    position: absolute;
+    opacity: 0;
+    transform: translateX(-20%);
+    background: #FFFFFF;
+    color: var(--desaturated-dark-violet);
+    clip-path: polygon(20% 0% ,100% 0% ,100% 100% , 20% 100%);
+    -webkit-clip-path: polygon(20% 0% ,100% 0% ,100% 100% , 20% 100%);
+  }
+  .second-user-message{
+    position: absolute;
+    color: var(--desaturated-dark-violet);
+    background: #FFFFFF;
+    opacity: 0;
 }
 .send-btn{
     position: absolute;
@@ -252,6 +366,11 @@ border-radius: 0px 0px 14px 14px;
     left: 50%;
     transform: translate(-50%,50%) rotate(-45deg);
 }
+/********************************
+*
+*       5- Copy Text
+*
+********************************/
 h1{
     font-family: Rubik;
     font-style: normal;
@@ -260,7 +379,7 @@ h1{
     line-height: 70px;
     text-align: center;
     letter-spacing: 0.017em;
-    color: #3E2753;
+    color: var(--very-dark-desaturated-violet);
     margin: 52px 0 13px;
 }
 p{
@@ -270,10 +389,15 @@ p{
     line-height: 28px;
     text-align: center;
     letter-spacing: 0.003em;
-    color: #A39DAA;
+    color: var(--dark-grayish-violet);
     width: 316px;
     margin: auto;
 }
+/********************************
+*
+*       6- Footer
+*
+********************************/
 .attribution{
     position: absolute;
     bottom: 1rem;
@@ -314,6 +438,295 @@ a{
     background: #F9F4FA;
     border-radius: 255.5px;
 }
+/********************************
+*
+*       7- KeyFrames
+*
+********************************/
+@keyframes hide {
+  0%{
+    opacity: 0%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+@keyframes show {
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 100%;
+  }
+}
+@keyframes vanish {
+  0%{
+    opacity: 100%;
+  }
+  100%{
+    opacity: 0%;
+  }
+}
+@keyframes leftToRigth {
+  0%{
+    transform: translateX(-250%)
+  }
+  100%{
+    transform: translateX(0%)
+  }
+}
+@keyframes unfold {
+  0%{
+    transform: scale(0,1);
+  }
+  100%{
+    transform: scale(1,1);
+  }
+}
+@keyframes slideLeftMsg {
+  0%{
+    transform: scale(0,1) translateY(-17px);
+  }
+  100%{
+    transform: scale(1,1) translateY(-17px);
+  }
+}
+@keyframes showTyping{
+  0%{
+    transform: scale(1,1) translateY(9px);
+  }
+  100%{
+    transform: scale(1,1) translateY(9px);
+  }
+}
+@keyframes slideLeftTyping{
+  0%{
+    width: 0;
+  }
+  100%{
+    width: 46px;
+  }
+}
+@keyframes leftTypingSize{
+  0%{
+    width: 46px;
+  }
+  100%{
+    width: 46px;
+  }
+}
+@keyframes leftMsgSize{
+  0%{
+    width: 46px;
+  }
+  100%{
+    width: 128px;
+  }
+}
+@keyframes rightMsgSize{
+  0%{
+    height: 34px;
+    width: 0px;
+  }
+  100%{
+    height: 34px;
+    width: 128px;
+  }
+}
+@keyframes rightLittleMsgSize{
+  0%{
+    height: 23px;
+    width: 0px;
+  }
+  100%{
+    height: 23px;
+    width: 128px;
+  }
+}
+@keyframes typing {
+  0% {
+    transform: translateY(0px);
+    background-color: hsl(293, 50%, 63%) ; 
+  }
+  25% {
+    transform: translateY(-7px);
+    background-color: hsl(293, 50%, 63%)
+  }
+  40% {
+    transform: translateY(0px);
+    background-color: var(--pale-violet);
+  }
+}
+@keyframes rotatingLoader {
+  0% {
+    transform: translate(-50%,-50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%,-50%) rotate(360deg);
+  }
+} 
+@keyframes hideText{
+  0%{
+    color: white;
+  }
+  100%{
+    color: white;
+  }
+}
+@keyframes pressBtn{
+  0%{
+    transform: translateY(0)
+  }
+  50%{
+    transform: translateY(2px)
+  }
+  100%{
+    transform: translateY(0)
+  }
+}
+@keyframes typeMesagge {
+  0%{
+    transform: translateX(0);
+    clip-path: polygon(0% 0% ,0% 0% ,0% 100% , 0% 100%);
+    -webkit-clip-path: polygon(0% 0% ,0% 0% ,0% 100% , 0% 100%);
+  }
+  80%{
+    transform: translateX(0);
+    clip-path: polygon(0% 0% ,80% 0% ,80% 100% , 0% 100%);
+    -webkit-clip-path: polygon(0% 0% ,80% 0% ,80% 100% , 0% 100%);
+  }
+  100%{
+    transform: translateX(-20%);
+    clip-path: polygon(20% 0% ,100% 0% ,100% 100% , 20% 100%);
+    -webkit-clip-path: polygon(20% 0% ,100% 0% ,100% 100% , 20% 100%);
+  }
+}
+@keyframes typeShortMesagge {
+  0%{
+    clip-path: polygon(0% 0% ,0% 0% ,0% 100% , 0% 100%);
+    -webkit-clip-path: polygon(0% 0% ,0% 0% ,0% 100% , 0% 100%);
+  }
+  100%{
+    clip-path: polygon(0% 0% ,100% 0% ,100% 100% , 0% 100%);
+    -webkit-clip-path: polygon(0% 0% ,100% 0% ,100% 100% , 0% 100%);
+  }
+}
+@keyframes circle {
+  0%{
+    clip-path: circle(1% at 0% 200%);
+    -webkit-clip-path: circle(1% at 0% 200%);
+  }
+  100%{
+    clip-path: circle(150% at 0% 100%);
+    -webkit-clip-path: circle(150% at 0% 100%);
+  }
+}
+/********************************
+*
+*       8- Animations
+*
+********************************/
+.cell-img{
+  animation: hide 500ms, leftToRigth 1s 500ms ease-out;
+}
+.typing .dot{
+  animation: typing 1.8s infinite ease-in-out;
+}
+.typing .dot:nth-child(1) {
+  animation-delay: 200ms;
+}
+.typing .dot:nth-child(2) {
+  animation-delay: 300ms;
+}
+.typing .dot:nth-child(3) {
+  animation-delay: 400ms;
+}
+/* left first message*/
+.left-first-animation{
+  animation: hide 2s, slideLeftTyping 200ms 2s, leftTypingSize 1.3s 2.2s, leftMsgSize 500ms 3.5s;
+}
+.left-first.typing{
+  animation: showTyping 1.5s 2s;
+}
+.left-first-text-animation{
+  transform: translateY(-17px);
+  animation: hide 3.5s , slideLeftMsg 500ms 3.5s, vanish 1s 3.5s reverse;
+}
+/* left second message*/
+.left-second-animation{
+  animation: hide 4s , slideLeftTyping 200ms 4s, leftTypingSize 2.3s 4.2s, leftMsgSize 500ms 6.5s;
+}
+.left-second.typing{
+  animation: showTyping 2.5s 4s;
+}
+.left-second-text-animation{
+  transform: translateY(-17px);
+  transform-origin: left;
+  animation: hide 6.5s , slideLeftMsg 500ms 6.5s, vanish 1s 6.5s reverse;
+}
+/* dog images */
+.right-imgs-animation{
+  transform-origin: right;
+  animation: hide 8.2s , unfold 500ms 8.2s ease-out;
+}
+.img-container::after{
+  animation: rotatingLoader 1.5s infinite, show 12s 8.2s, vanish 1.5s 20.2s;
+}
+.img-container::before{
+  animation: show 12s 8.2s , vanish 1.5s 20.2s;
+}
+/* rigth first message*/
+.right-first-animation{
+  transform-origin: right;
+  animation: hide 13.5s , rightMsgSize 300ms 13.5s ease-out ;
+}
+.first-right-text{
+  transform-origin: right;
+  animation: unfold 500ms 13.5s ease-out, vanish 500ms 13.5s reverse
+}
+.first-user-message{
+  animation: show 4s 9s, typeMesagge 3s 9s linear, vanish 500ms 13s;
+}
+.input{
+  animation: hideText 4s 9s, hideText 3s 15s;
+}
+.send-btn{
+  animation: pressBtn 500ms 12.5s, pressBtn 500ms 17.5s;
+}
+/* rigth second message*/
+.right-second-animation{
+  transform-origin: right;
+  animation: hide 18.5s  , rightLittleMsgSize 300ms 18.5s ease-out ;
+}
+.second-right-text{
+  transform-origin: right;
+  animation: hide 18.5s ease-out, vanish 500ms 18.5s reverse; 
+}
+.second-user-message{
+  animation: show 3s 15s, typeShortMesagge 2s 15s , vanish 500ms 18s;
+}
+/* left third message*/
+.left-third-animation{
+  animation: hide 19.5s ,slideLeftTyping 200ms 19.5s, leftTypingSize 2.3s 19.7s, leftMsgSize 500ms 22s;
+}
+.left-third.typing{
+  animation: showTyping 2.5s 19.5s;
+}
+.left-third-text-animation{
+  transform: translateY(-17px);
+  transform-origin: left;
+  animation: hide 22s , slideLeftMsg 500ms 22s, vanish 500ms 22s reverse;
+}
+/* left options*/
+.option-animation{
+  transform-origin: left;
+  animation: hide 23.5s , circle 500ms 23.5s ease-out; 
+}
+/********************************
+*
+*       9- MediaQuery
+*
+********************************/
 @media (min-width:800px){
     .content{
         flex-direction: row;
