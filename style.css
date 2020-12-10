@@ -682,7 +682,7 @@ a{
 }
 .first-right-text{
   transform-origin: right;
-  animation: unfold 500ms 13.5s ease-out, vanish 500ms 13.5s reverse
+  animation: unfold 500ms 13.5s ease-out, vanish 1s 13.5s reverse
 }
 .first-user-message{
   animation: show 4s 9s, typeMesagge 3s 9s linear, vanish 500ms 13s;
